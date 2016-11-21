@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>测试文字上下左右居中样式，文字超出一行自动换行</title>
+</head>
+
+<body>
+    <!-- Atao -->
+    <style type="text/css" media="screen">
+    .vertical-align {
+        font-size: 0;
+        text-align: center;
+        width: 200px;
+        height:200px;
+        padding: 15px;
+        border:1px dashed #ddd;
+    }
+    .vertical-align:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .vertical-align-middle {
+        vertical-align: middle;
+    }
+    .vertical-align-middle {
+        display: inline-block;
+        font-size: 12px;
+        max-width: 80%;
+    }
+    </style>
+
+    <div class="vertical-align">
+        <span class="vertical-align-middle">测试文字左右居中样式</span>
+    </div>
+
+</body>
+
+</html>
