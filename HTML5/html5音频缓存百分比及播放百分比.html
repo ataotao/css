@@ -1,0 +1,27 @@
+<html>
+<script>
+function test(e) {
+    var a = e.target,
+        b = a.buffered,
+        c = a.currentTime * 100,
+        d = b.end(b.length - 1) * 100;
+    console.log('procress:' + (Math.floor((c / a.duration) * 100) / 100) + '%, loading:' + (Math.floor((d / a.duration) * 100) / 100) + '%.');
+        txt.innerHTML = 'procress:' + (Math.floor((c / a.duration) * 100) / 100) + '%, loading:' + (Math.floor((d / a.duration) * 100) / 100) + '%.';
+}
+window.onload = function(){
+    var audio = document.getElementById('audio');
+    var txt = document.getElementById('txt');
+    audio.addEventListener("progress",
+        function(aud) {
+            test(aud);
+        },
+    false);
+};
+
+</script>
+<!-- <audio id="audio" src="http://freshly-ground.com/data/audio/sm2/Adrian%20Glynn%20-%20Seven%20Or%20Eight%20Days.mp3" autoplay="false" controls="true">
+</audio> -->
+<audio id="audio" src="Why.mp3" autoplay controls="true"></audio>
+<div id="txt"></div>
+
+</html>
