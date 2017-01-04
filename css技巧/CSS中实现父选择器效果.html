@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <style>
+        /*原先的父级容器只处理结构，不负责外观。CSS代码如下：*/
+        .container {
+            min-height: 120px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .border {
+            /* 尺寸自适应容器大小，假装是容器 */
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* 在输入框的下面 */
+            z-index: -1;
+            /* 外观模拟 */
+            border: 1px solid #bbb;
+        }
+        
+        .input:focus+.border {
+            /* 容器边框颜色高亮 */
+            border-color: #1271E0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--新建一个元素负责容器的外观，放置在输入框的后面，使用absolute拉伸和容器尺寸一致。于是HTML结构变成这样：-->
+    <div class="container">
+        <input id="input" class="input">
+        <!-- 下面的label就是新建的负责容器外观的元素 -->
+        <label class="border" for="input"></label>
+    </div>
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+</body>
+
+</html>
