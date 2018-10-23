@@ -1,0 +1,90 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+    width: 300px;
+    border: solid 1px #CCC;
+    padding: 30px;
+    margin-left: 10px;
+}
+.box{
+    display: flex;
+}
+.box1{
+    display: inline-flex;
+}
+
+.box2{
+    display: flex;
+    flex-direction: row;
+}
+
+.box3{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.box4{
+    display: flex;
+    flex-direction: column;
+}
+.box5{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.box6{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.box7{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box8{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.box9{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.box10{
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+.box11{
+    display: flex;
+    flex-flow: row wrap;
+}
+.box12{
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+.box13{
+    display: flex;
+    height: 20px;
+    flex-flow: column nowrap;
+}
+.box14{
+    display: flex;
+    flex-flow: column-reverse nowrap;
+}
+
+.box15{
+    display: flex;
+    height: 60px;
+    flex-flow: column wrap;
+}
+.box16{
+    display: flex;
+    height: 60px;
+    flex-flow: column-reverse wrap;
+}
+
+
+.item{
+    width: 20px;
+    height: 20px;
+}

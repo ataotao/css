@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+    /**
+     * 使用计数器Edit
+     * 使用CSS计数器之前，必须重置一个值，默认是0。
+     * 使用counter()函数来给元素增加计数器。 
+     * 下面的CSS给每个h3元素的前面增加了 "Section <计算器值>:"。
+     */
+
+    body {
+        /* 重置计数器成0 */
+        counter-reset: section;
+    }
+
+    h3:before {
+        /* 增加计数器值 */
+        counter-increment: section;
+        /* 显示计数器 */
+        content: "Section " counter(section) ": ";
+    }
+    </style>
+    <h3>Introduction</h3>
+    <h3>Body</h3>
+    <h3>Conclusion</h3>
+    <style>
+    /**
+    	 * 计数器嵌套Edit
+    	 * CSS计数器对创建有序列表特别有用，因为在子元素中会自动创建一个CSS计数器的实例。使用 counters() 函数，在不同级别的嵌套计数器之间可以插入字符串。比如这个CSS例子：
+    	 */
+
+    ol {
+        /* 为每个ol元素创建新的计数器实例 */
+        counter-reset: sectionA;
+        list-style-type: none;
+    }
+
+    li:before {
+        /* 只增加计数器的当前实例 */
+        counter-increment: sectionA;
+        /* 为所有计数器实例增加以“.”分隔的值 */
+        content: counters(sectionA, ".") " ";
+    }
+    </style>
+    <ol>
+        <li>item</li>
+        <!-- 1     -->
+        <li>item
+            <!-- 2     -->
+            <ol>
+                <li>item</li>
+                <!-- 2.1   -->
+                <li>item</li>
+                <!-- 2.2   -->
+                <li>item
+                    <!-- 2.3   -->
+                    <ol>
+                        <li>item</li>
+                        <!-- 2.3.1 -->
+                        <li>item</li>
+                        <!-- 2.3.2 -->
+                    </ol>
+                    <ol>
+                        <li>item</li>
+                        <!-- 2.3.1 -->
+                        <li>item</li>
+                        <!-- 2.3.2 -->
+                        <li>item</li>
+                        <!-- 2.3.3 -->
+                    </ol>
+                </li>
+                <li>item</li>
+                <!-- 2.4   -->
+            </ol>
+        </li>
+        <li>item</li>
+        <!-- 3     -->
+        <li>item</li>
+        <!-- 4     -->
+    </ol>
+    <ol>
+        <li>item</li>
+        <!-- 1     -->
+        <li>item</li>
+        <!-- 2     -->
+    </ol>
+</body>
+
+</html>

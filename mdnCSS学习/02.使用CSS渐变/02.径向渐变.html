@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+		width: 200px;
+		height: 200px;
+		}
+		.boxa{
+		width: 400px;
+		height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h5>
+		浏览器支持两种类型的渐变：线性渐变 (linear)，通过 linear-gradient 函数定义，以及 径向渐变 (radial)，通过 radial-gradient 函数定义.
+	</h5>
+	<h5>
+		径向渐变使用 radial-gradient 函数语法. 这个语法和线性渐变很类似, 除了你可以指定渐变结束时的形状 (可能时一个圆形或者一个椭圆形) 以及它的大小. 默认来说，结束形状是一个椭圆形并且和容器的大小比例保持一致。
+	</h5>
+
+	<h4>色标</h4>
+	<h5>你可以像在线性渐变中一样指定色标。渐变线从起始位置向各个方向延伸.。</h5>
+	<style>
+	.box1{
+		background: radial-gradient(red, yellow, rgb(30, 144, 255));
+	}
+	</style>
+	<div class="box box1"></div>
+
+
+	<h4>例子: 指定间距色标</h4>
+	<style>
+	.box2{
+		background: radial-gradient(red 5%, yellow 25%, #1E90FF 50%);
+	}
+	</style>
+	<div class="box box2"></div>
+
+
+	<h4>大小</h4>
+	<h5>这是径向渐变和线性渐变其中的一个不同之处。 你可以用一个尺寸值来指定定义圆形或者椭圆形的大小的点. 详细请参考 尺寸常量的描述 。</h5>
+
+	<p>例子: 椭圆的最近端</p>
+	<p>这个椭圆使用最近端的值, 这就意味着从开始点(中心点)到封闭盒子的最近端的距离来指定椭圆的尺寸。</p>
+	<style>
+	.box3{
+		/*background: radial-gradient(ellipse closest-side, red, yellow 10%, #1E90FF 50%, white);*/
+		background: radial-gradient(ellipse closest-side, red, white);
+	}
+	</style>
+	<div class="boxa box3"></div>
+
+	<p>例子: 椭圆的最远端</p>
+	<p>这个例子和之前的例子相似，除了它的大小指定为farthest-corner，渐变的尺寸为起始点到封闭盒模型最远端的起始点的距离。</p>
+	<style>
+	.box4{
+		/*background: radial-gradient(ellipse farthest-corner, red, yellow 10%, #1E90FF 50%, white);*/
+		background: radial-gradient(ellipse farthest-corner, red, white);
+	}
+	</style>
+	<div class="boxa box4"></div>
+
+	<p>例子: 圆形的最近端</p>
+	<p>这里，圆的半径是盒子高度的一半，因为顶部和底部边缘和起点和左边和右边很接近。</p>
+	<style>
+	.box5{
+		/*background: radial-gradient(circle closest-side, red, yellow 10%, #1E90FF 50%, white);*/
+		background: radial-gradient(circle closest-side, red, white);
+	}
+	</style>
+	<div class="boxa box5"></div>
+
+	<style>
+	.box6{
+		/*background: radial-gradient(ellipse closest-side, red, yellow 10%, #1E90FF 50%, white);*/
+		background: radial-gradient(ellipse closest-side, red, white);
+	}
+	</style>
+	<div class="boxa box6"></div>
+
+	<h4>重复的渐变</h4>
+	<h5>linear-gradient 和 radial-gradient不支持自动重复的色标。然而，  repeating-linear-gradient 和 repeating-radial-gradient 可以实现这个功能。</h5>
+
+	<p>例子: 重复的线性渐变</p>
+	<p>这个例子使用 repeating-linear-gradient 创建渐变:</p>
+
+	<style>
+	.box7{
+		background: repeating-linear-gradient(-45deg, red, red 5px, white 5px, white 10px);
+	}
+	</style>
+	<div class="box box7"></div>
+	
+	<p></p>
+
+	<style>
+	.box8{
+  		background-image: repeating-linear-gradient(180deg,rgb(26,198,204),rgb(26,198,204) 7%, rgb(100,100,100) 10%);
+	}
+	</style>
+	<div class="box box8"></div>
+	
+	<h4>另一个使用 repeating-linear-gradient属性的例子。</h4>
+	<style>
+	.box9{
+		background-color: #000;
+		background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
+		      rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
+		      rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
+		      rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+		repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
+		      rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
+		      rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
+		      rgba(255, 206, 0, 0.25) 166px),
+		repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+		      rgba(143, 77, 63, 0.25) 10px),
+		repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+		      rgba(143, 77, 63, 0.25) 10px);
+	}
+	</style>
+	<div class="box box9"></div>
+
+	<p></p>
+	<style>
+	.box10{
+		background: repeating-linear-gradient(120deg, #0092b7 0, #000 1px , #000 .25em, #0092b7 calc(.25em + 1px) , #0092b7 .75em );
+	}
+	</style>
+	<div class="box box10"></div>
+
+
+	
+	<h4>例子: 重复的径向渐变</h4>
+	<h5>这个例子使用 repeating-radial-gradient 创建渐变:</h5>
+	<style>
+	.box11{
+		background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+	}
+	</style>
+	<div class="box box11"></div>
+
+
+	<h4>黑胶例子</h4>
+	<style>
+		.record-container {
+		  display: inline-block;
+		  overflow: hidden;
+		  width: 400px; height: 300px;
+		  border-radius: 10px;
+		  box-shadow: 0 6px #99907e;
+		  background: #b5ac9a;
+		}
+		.record {
+		  position: relative;
+		  margin: 19px auto;
+		  width: 262px; height: 262px;
+		  border-radius: 50%;
+		  background: 
+		    linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
+		    linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
+		    repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+		  background-size: 50% 100%, 100% 50%, 100% 100%;
+		}
+		.record:after {
+		  position: absolute;
+		  top: 50%; left: 50%;
+		  margin: -35px;
+		  border: solid 1px #d9a388;
+		  width: 68px; height: 68px;
+		  border-radius: 50%;
+		  box-shadow: 0 0 0 4px #da5b33,
+		    inset 0 0 0 27px #da5b33;
+		  background: #b5ac9a;
+		  content: '';
+		}
+	</style>
+	<div class='record-container'>
+	  <img src='shot_1293655299.png' />
+	</div>
+	<div class='record-container'>
+	  <div class='record'></div>
+	</div>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+		width: 200px;
+		height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h5>
+		浏览器支持两种类型的渐变：线性渐变 (linear)，通过 linear-gradient 函数定义，以及 径向渐变 (radial)，通过 radial-gradient 函数定义.
+	</h5>
+
+	<h4>简单线性渐变</h4>
+	<h5>这里是一个线性渐变从中间（水平方向）和顶部（垂直方向）开始，起始于蓝色，过渡到白色.</h5>
+	<style>
+	.box1{
+		background: linear-gradient(to bottom, blue, white);
+	}
+	</style>
+	<div class="box box1"></div>
+
+	<h5>改变相同的渐变从左到右运行:</h5>
+	<style>
+	.box2{
+		background: linear-gradient(to right, blue, white);
+	}
+	</style>
+	<div class="box box2"></div>
+
+	<h5>你可以同时指定水平方向和垂直方向的起始点使渐变对角线式的运行::</h5>
+	<style>
+	.box3{
+		background: linear-gradient(to bottom right, blue, white);
+	}
+	</style>
+	<div class="box box3"></div>
+
+	<h4>使用角度</h4>
+	<h5>如果你不指定一个角度，这个将自动基于给定的方向。如果你更喜欢控制渐变的方向，你可以设置特定的角度。:</h5>
+	<img src="linear_red_angles.png">
+	<style>
+	.box4{
+		background: linear-gradient(270deg, black, white);
+	}
+	</style>
+	<div class="box box4"></div>
+
+
+	<h4>色标</h4>
+	<h5>渐近线的颜色停止点在该位置有特定的颜色。该位置可以被指定为线长度的百分比或一个绝对长度。为实现期望的效果，可以指定任意多个颜色停止点。</h5>
+	<h5>如果指定位置使用百分比，那么 0% 表示起点，100% 表示终点。然而，如果有需要，也可以使用范围之外的值</h5>
+	<style>
+	.box5{
+		background: linear-gradient(to bottom right, blue, white 50%, rgba(0,0,0,0.7));
+	}
+	</style>
+	<div class="box box5"></div>
+	
+	<h4>透明和渐变</h4>
+	<h5>渐变是支持透明度的。 举个例子，当你叠加多个背景层，你可以使用这个在背景图片上来创建淡入淡出的效果 :</h5>
+	<style>
+	.box6{
+		background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1)), url(linear_multibg_transparent2.png);
+	}
+	</style>
+	<div class="box box6"></div>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 400px;
+        height: 200px;
+    }
+    </style>
+</head>
+
+<body>
+	<h4>这个纹理是由黑色和蓝色的条纹组成，其中蓝色条纹的大小是黑色条纹的两倍。如果黑色条纹的宽度是.25em，使用repeating-linear-gradient这样写代码：</h4>
+	<p>渐变从左上角(135deg)开始。</p>
+	<p>如果你需要一个重复的线性渐变以及他们的角度是如何工作的，可以看看这篇文章所做的解释(忽略有关于旧的语法部分)。</p>
+	<p>有一个黑色条纹从0到.25em线性渐变，接着一条蓝色条纹从.25em到.75em。</p>
+	<p>（蓝色条纹宽度 = .75em - .25em = .5em = 黑色条纹宽度的两倍 ＝ .25em * 2）</p>
+    <style>
+    .box1 {
+        background: repeating-linear-gradient(135deg,
+        #000, #000 .25em,              /* black stripe */
+        #0092b7 0, #0092b7 .75em       /* blue stripe */
+        );
+    }
+    </style>
+    <div class="box box1"></div>
+
+	<h4>现在我们尝试使用纯linear-gradient和background-size实现相同的条纹效果。我们将一个方形的背景加上带有角度.25em宽度黑色条纹和.5em宽度的蓝色条纹。一个正方形的对角线是直角边的√2(根号二)。如果我们知道对角线长度是.25em + .50em = .75em，然后background-size的尺寸是.75em / √2。代码如下所示：</h4>
+	<p>可是效果看起来并不是我们想要的：</p>
+    <style>
+	.box2 {
+		width: 100px;
+		height: 100px;
+		background: linear-gradient(135deg, #000 .25em, #0092b7 0);
+		background-size: .75em/sqrt(2) .75em/sqrt(2);
+	}
+
+    </style>
+    <div class="box2"></div>
+</body>
+
+</html>
